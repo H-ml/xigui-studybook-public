@@ -34,6 +34,9 @@
 
 # 使用方式
 可以直接拉项目按照下面的方式配置，对于不会配置的小伙伴，可以直接把整个项目的链接丢给ai进行本地安装部署。
+遇到问题联系方式：
+<img width="686" height="840" alt="image" src="https://github.com/user-attachments/assets/d64c5c4d-ca44-4bb1-8c64-91b5b017546d" />
+
 
 ## 环境要求
 

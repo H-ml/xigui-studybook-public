@@ -1,0 +1,19 @@
+services:
+  studybook:
+    build: .
+    container_name: xigui-studybook-public
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      STUDYBOOK_CONTENT_DIR: /app/content
+      STUDYBOOK_DATA_DIR: /app/data
+      TEXTBOOK_PATH: /materials/textbook.pdf
+      TEXTBOOK_PAGES_PATH: /materials/pages
+    volumes:
+      - ./data:/app/data
+      - ${XIGUI_TEXTBOOK_PATH:-./materials/textbook.pdf}:/materials/textbook.pdf:ro
+      - ${XIGUI_TEXTBOOK_PAGES_DIR:-./materials/pages}:/materials/pages:ro

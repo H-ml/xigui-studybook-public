@@ -1,0 +1,16 @@
+study.example.com {
+    encode zstd gzip
+
+    # 先执行 `caddy hash-password` 生成密码哈希，再替换下面的占位内容。
+    basic_auth {
+        USERNAME YOUR_BCRYPT_HASH
+    }
+
+    header {
+        Strict-Transport-Security "max-age=31536000; includeSubDomains"
+        X-Content-Type-Options "nosniff"
+        Referrer-Policy "same-origin"
+    }
+
+    reverse_proxy 127.0.0.1:3100
+}
